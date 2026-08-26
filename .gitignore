@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+iechm.db
+.DS_Store

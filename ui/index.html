@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IECHM &middot; Lead Generation Engine</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">IECHM</span>
+      <span class="brand-sub">Autonomous Lead Generation &amp; Intelligence Engine</span>
+    </div>
+    <div class="controls">
+      <span id="day-badge" class="badge">Day 0</span>
+      <button id="btn-run" class="btn btn-primary">Run Next Cycle</button>
+      <button id="btn-reset" class="btn btn-ghost">Reset</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="funnel-row" id="funnel-row" aria-label="Funnel metrics">
+      <!-- filled by app.js: renderFunnel() -->
+    </section>
+
+    <section class="panel" id="panel-channels">
+      <h2>Lead Channel Types</h2>
+      <div class="table-wrap">
+        <table id="table-channels">
+          <thead>
+            <tr>
+              <th>Channel</th><th>Platforms</th><th>Signals</th><th>Layer&nbsp;0 pass</th>
+              <th>Qualified</th><th>Bids OK</th><th>Health</th><th>Spawned</th><th>Deprecated</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="two-col">
+      <section class="panel" id="panel-agents">
+        <h2>Agent Swarm</h2>
+        <div class="table-wrap">
+          <table id="table-agents">
+            <thead>
+              <tr><th>Layer</th><th>Role</th><th>Channel</th><th>Status</th><th>Model</th><th>Drift</th><th>Leads</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-sentinel">
+        <h2>Sentinel Events</h2>
+        <ul id="sentinel-feed" class="event-feed"></ul>
+      </section>
+    </div>
+
+    <section class="panel" id="panel-strategies">
+      <h2>Strategy Ledger</h2>
+      <div class="table-wrap">
+        <table id="table-strategies">
+          <thead>
+            <tr><th>Domain</th><th>Strategy</th><th>Wins</th><th>Losses</th><th>Win rate</th><th>Status</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel" id="panel-leads">
+      <div class="panel-header-row">
+        <h2>Qualified Leads</h2>
+        <div class="filters">
+          <select id="filter-channel"><option value="">All channels</option></select>
+          <select id="filter-status">
+            <option value="">All statuses</option>
+            <option value="BID_APPROVED">Bid approved</option>
+            <option value="BID_REJECTED_BY_REVIEWER">Bid rejected</option>
+          </select>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table id="table-leads">
+          <thead>
+            <tr>
+              <th>Platform</th><th>Title</th><th>Archetype</th><th>Domain</th>
+              <th>Market $</th><th>Bid $</th><th>Margin %</th><th>Status</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div id="lead-modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button id="modal-close" class="modal-close" aria-label="Close">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
