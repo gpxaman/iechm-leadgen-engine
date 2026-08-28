@@ -1,0 +1,4 @@
+*.o
+iechm_server
+iechm_demo
+iechm.db
